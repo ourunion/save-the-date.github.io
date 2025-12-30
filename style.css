@@ -178,6 +178,8 @@ body {
 }
 
 .closing {
+    font-family: 'BrittanySignature';
+  src: url('fonts/BrittanySignature.ttf') format('truetype');
   margin-top: 36px;
   font-size: clamp(16px, 4.5vw, 18px);
   color: #4a463f;
