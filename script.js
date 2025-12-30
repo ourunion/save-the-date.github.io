@@ -1,13 +1,27 @@
 $(function () {
 
+  const music = document.getElementById("bgMusic");
+  let musicStarted = false;
+
+  /* ---------- BUTTON CLICK ---------- */
   $("#openBtn").on("click", function () {
+
+    // open the scene (if still used)
     $(".scene").addClass("open");
+
+    // START MUSIC — SAFE (user gesture)
+    if (!musicStarted && music) {
+      music.volume = 0.4;
+      music.play();
+      musicStarted = true;
+    }
   });
 
+  /* ---------- FALLING ELEMENTS ---------- */
   const items = [
-    "🍂", "🍁", "🍃",        // autumn leaves
-    "🌼", "🌸", "🍁",        // flowers
-    "🌿"                    // greenery
+    "🍂", "🍁", "🍃",
+    "🌼", "🌸",
+    "🌿"
   ];
 
   const colors = [
