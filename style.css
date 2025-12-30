@@ -24,22 +24,23 @@ body {
 .scene {
   position: relative;
   width: 100%;
-  height: 100svh;
+  min-height: 100svh;          /* FIX */
   max-width: 430px;
   overflow: hidden;
 }
 
 /* Shared text */
 .top-text {
-  font-size: 20px;
+  font-size: clamp(14px, 4vw, 20px);   /* FIX */
   letter-spacing: 4px;
   margin-bottom: 24px;
   color: #6f6a63;
 }
 
+/* Handwritten names */
 .hero-names {
   font-family: 'BrittanySignature', cursive;
-  font-size: 64px;
+  font-size: clamp(42px, 14vw, 72px);  /* FIX */
   line-height: 1.1;
   text-align: center;
   color: #3e3b36;
@@ -47,7 +48,7 @@ body {
 
 .hero-names span {
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: clamp(14px, 4vw, 18px);   /* FIX */
   letter-spacing: 3px;
   display: block;
   margin: 10px 0;
@@ -79,12 +80,17 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.85),
+    rgba(255,255,255,0.65)
+  );
 }
 
 .cover-content {
   position: relative;
   height: 100%;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +99,7 @@ body {
 
 .date-text {
   margin-top: 24px;
-  font-size: 16px;
+  font-size: clamp(14px, 4vw, 16px);  /* FIX */
   letter-spacing: 2px;
   color: #6f6a63;
 }
@@ -140,11 +146,14 @@ body {
   );
 }
 
+/* Scroll-safe content */
 .card-content {
   position: relative;
-  padding: 72px 32px 160px;
+  padding: 64px 28px 140px;   /* FIX */
   text-align: center;
   z-index: 2;
+  max-height: calc(100svh - 120px); /* FIX */
+  overflow-y: auto;                 /* FIX */
 }
 
 .divider {
@@ -155,7 +164,7 @@ body {
 }
 
 .details {
-  font-size: 18px;
+  font-size: clamp(16px, 4.5vw, 18px); /* FIX */
   color: #4a463f;
   margin-top: 14px;
 }
@@ -167,11 +176,9 @@ body {
 
 .closing {
   margin-top: 36px;
-  font-size: 18px;
+  font-size: clamp(16px, 4.5vw, 18px); /* FIX */
   color: #4a463f;
 }
-
-
 
 /* ---------- OPEN STATE ---------- */
 .scene.open .envelope {
@@ -205,5 +212,12 @@ body {
   to {
     transform: translateY(110vh) rotate(360deg);
     opacity: 0;
+  }
+}
+
+/* ---------- SMALL PHONE TWEAK ---------- */
+@media (max-height: 700px) {
+  .card-content {
+    padding-bottom: 100px;
   }
 }
