@@ -155,7 +155,7 @@ body {
   padding: 64px 28px 140px;
   text-align: center;
   z-index: 4;
-  max-height: calc(100svh - 120px);
+  max-height: calc(100svh - 60px);
   overflow-y: auto;
 }
 
