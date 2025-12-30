@@ -167,9 +167,15 @@ body {
 }
 
 .details {
-  font-size: clamp(16px, 4.5vw, 18px);
+  font-size: clamp(16px, 4.5vw, 1px);
   color: #4a463f;
   margin-top: 14px;
+}
+
+.location-details {
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #4a463f;
+  margin-top: 1px;
 }
 
 .details.strong {
