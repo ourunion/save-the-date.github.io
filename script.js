@@ -55,3 +55,25 @@ $(function () {
 
   }, 200);
 });
+/* ---------- STOP MUSIC & ANIMATIONS WHEN PAGE HIDDEN ---------- */
+
+document.addEventListener("visibilitychange", () => {
+  const music = document.getElementById("bgMusic");
+
+  if (document.hidden) {
+    // tab switched / browser minimized
+    if (music && !music.paused) {
+      music.pause();
+    }
+  }
+});
+
+/* ---------- STOP EVERYTHING ON PAGE CLOSE ---------- */
+window.addEventListener("beforeunload", () => {
+  const music = document.getElementById("bgMusic");
+
+  if (music) {
+    music.pause();
+    music.currentTime = 0;
+  }
+});
