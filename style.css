@@ -421,3 +421,69 @@ body {
     transform: translateY(0);
   }
 }
+
+/* SWIPE UP HINT */
+.swipe-hint {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* animate only when slide is visible */
+.slide.show .swipe-hint {
+  animation: swipePulse 2.4s ease-in-out infinite;
+}
+
+/* animation */
+@keyframes swipePulse {
+  0% {
+    opacity: 0.6;
+    transform: translateY(6px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(6px);
+  }
+}
+
+/* stop animation after scroll */
+.slides.scrolled .slide.show .swipe-hint {
+  animation: none;
+  opacity: 0.6;
+}
+
+/* SWIPE HINT */
+.swipe-hint {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* animate on ANY visible slide */
+.slide.show .swipe-hint {
+  animation: swipePulse 2.4s ease-in-out infinite;
+}
+
+/* animation */
+@keyframes swipePulse {
+  0% {
+    opacity: 0.6;
+    transform: translateY(6px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateY(6px);
+  }
+}
+
+/* stop animation AFTER first scroll */
+.slides.scrolled .slide.show .swipe-hint {
+  animation: none;
+  opacity: 0.6;
+}
