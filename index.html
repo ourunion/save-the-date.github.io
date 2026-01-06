@@ -1,73 +1,113 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Wedding Invitation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You’re Invited to Our Big Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Allura&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Parisienne&family=Sacramento&family=Satisfy&family=Alex+Brush&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Homemade+Apple&family=Shadows+Into+Light&family=Patrick+Hand&family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
-  <div class="scene">
+<div class="stage">
 
-    <!-- FIRST SCREEN -->
-    <div class="envelope">
-      <div class="cover-bg"></div>
+  <!-- LANDING (PLAIN BACKGROUND) -->
+  <section class="scene envelope active">
+    
+    <button class="seal" id="openInvite">S & W</button>
+    <p class="exclusive">Because your presence matters</p>
+    <p class="hint-msg">Tap the circle to open</p>
+  </section>
 
-      <div class="cover-content">
-        <p class="top-text">SAVE THE DATE</p>
+  <div class="fade"></div>
 
-        <h1 class="hero-names">
-          Wanphisabha<br><br>
-          <span>and</span><br>
-          Sobhraj<br>
+  <!-- SCROLLABLE SLIDES -->
+  <div class="slides">
+
+    <!-- SLIDE 1 -->
+    <section class="slide invite">
+      <div class="photo-bg"></div>
+      <div class="frost"></div>
+
+      <div class="invite-content">
+        <p class="small reveal r1">SAVE THE DATE</p><br><br>
+
+        <h1 class="names reveal r2">
+          Sobhraj
+          <span>&</span>
+          Wanphisabha
         </h1>
-		<br>
-        <p class="date-text">10 March 2026 · 7:00 PM</p>
 
-        <button id="openBtn">View Invitation</button>
+        <div class="star reveal r3">✦</div>
+        <p class="date reveal r4">10<sup>th</sup> March 2026</p>
+        <p class="date reveal r4">5:00 PM onwards </p>
+        <p class="cta reveal r5">SWIPE UP ↑</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 -->
+    <section class="slide image-slide countdown-slide">
+  <div class="image-bg img1"></div>
+  <div class="frost"></div>
+
+  <div class="center-text">
+    <p class="small reveal r1 countdown-title">
+  COUNTING DOWN TO OUR BIG DAY
+</p>
+    <div class="countdown timereveal r2">
+      <div class="time-box">
+        <span id="days">00</span>
+        <label>DAYS</label>
+      </div>
+      <div class="time-box">
+        <span id="hours">00</span>
+        <label>HOURS</label>
+      </div>
+      <div class="time-box">
+        <span id="minutes">00</span>
+        <label>MINUTES</label>
+      </div>
+      <div class="time-box">
+        <span id="seconds">00</span>
+        <label>SECONDS</label>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- SECOND SCREEN -->
-    <div class="card">
-      <div class="card-bg"></div>
+    <!-- SLIDE 3 -->
+   <section class="slide image-slide">
+  <div class="image-bg img2"></div>
+  <div class="frost"></div>
 
-      <div class="card-content">
-        <p class="top-text">WEDDING INVITATION</p>
+  <div class="center-text venue">
+    <p class="small reveal r1">VENUE LOCATION</p>
 
-        <h1 class="hero-names">
-         Wanphisabha<br>
-          <span>and</span>
-          Sobhraj<br><br>
-        </h1>
-        <br><br><br>
+    <h2 class="venue-name reveal r2">
+      City Hut Dhaba
+    </h2>
 
-        <p class="details">
-          Together with their families,<br>
-          invite you to celebrate their union
-        </p>
-        <p class="details strong">10 March 2026 · 7:00 PM</p>
-        <p class="location-details">
-          City Hut Dhaba<br>
-          Shillong
-        </p>
+    <p class="venue-city reveal r3">Shillong</p>
 
-        <p class="closing">With love</p>
-      </div>
-    </div>
+    <a 
+      href="https://maps.google.com/?q=City+Hut+Dhaba+Shillong"
+      target="_blank"
+      class="map-link reveal r4"
+    >
+      📍 OPEN IN GOOGLE MAPS
+    </a>
+  </div>
+</section>
 
   </div>
 
-  <!-- Falling elements -->
-  <div class="falling"></div>
-<audio id="bgMusic" src="music.m4a" loop preload="auto"></audio>
-  <script src="script.js"></script>
+</div>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<script src="script.js"></script>
 </body>
 </html>
