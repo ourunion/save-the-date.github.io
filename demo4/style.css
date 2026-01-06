@@ -47,13 +47,7 @@ body {
   z-index: 5;
 }
 
-.envelope-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at top, rgba(255,255,255,.15), transparent),
-    #cfd9b9;
-}
+
 
 .seal {
   position: absolute;
@@ -208,10 +202,24 @@ body {
     transform 1.6s cubic-bezier(.22,.61,.36,1);
 }
 
+.timereveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 4.4s ease,
+    transform 1.6s cubic-bezier(.22,.61,.36,1);
+}
+
 .slide.show .reveal {
   opacity: 1;
   transform: translateY(0);
 }
+
+.slide.show .timereveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .r1 { transition-delay: .4s; }
 .r2 { transition-delay: .9s; }
@@ -250,7 +258,7 @@ body {
   border-radius: 14px;
   background: rgba(255,255,255,0.14);
   border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(10px);
 }
 
@@ -291,7 +299,7 @@ body {
 .venue-city {
   font-size: 15px;
   letter-spacing: 2px;
-  opacity: 0.85;
+  /*opacity: 0.85;*/
   margin-bottom: 24px;
 }
 
@@ -316,4 +324,68 @@ body {
 .map-link:active {
   background: rgba(255,255,255,0.18);
   transform: translateY(-2px);
+}
+
+.seal {
+  position: relative;
+}
+
+.seal::after,
+.seal::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.7);
+  animation: pulse-ring 2.8s infinite;
+}
+
+.seal::before {
+  inset: -26px;
+  border-color: rgba(255,255,255,0.4);
+  animation-delay: 1.4s;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  60% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* DELAYED HINT MESSAGE */
+.hint-msg {
+  position: absolute;
+  bottom: 6svh;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: rgba(92,102,71,0.9);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hint-msg.show {
+  opacity: 1;
 }

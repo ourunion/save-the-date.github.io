@@ -1,5 +1,18 @@
 // script.js
 $(function () {
+
+  // delayed hint after 5 seconds
+const hintTimer = setTimeout(() => {
+  $(".hint-msg").addClass("show");
+}, 5000);
+
+// if user taps, cancel hint
+$("#openInvite").on("click", function () {
+  clearTimeout(hintTimer);
+  $(".hint-msg").removeClass("show");
+});
+
+
   const music = document.getElementById("bgMusic");
   $("#openInvite").on("click", function () {
     music.volume = 0.6;
@@ -48,10 +61,7 @@ $(function () {
 
 });
 
-// script.js  (ADD BELOW YOUR EXISTING CODE)
-
 const slidesContainer = document.querySelector(".slides");
-
 slidesContainer.addEventListener("scroll", () => {
   document.querySelectorAll(".image-slide").forEach(slide => {
     const bg = slide.querySelector(".image-bg");
