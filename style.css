@@ -1,4 +1,3 @@
-/* style.css */
 @font-face {
   font-family: 'BrittanySignature';
   src: url('fonts/BrittanySignature.ttf') format('truetype');
@@ -47,8 +46,6 @@ body {
   z-index: 5;
 }
 
-
-
 .seal {
   position: absolute;
   top: 50%;
@@ -88,7 +85,6 @@ body {
   transition: opacity 1s ease;
 }
 
-/* SLIDES */
 .slides {
   position: absolute;
   inset: 0;
@@ -113,7 +109,6 @@ body {
   overflow: hidden;
 }
 
-/* BACKGROUNDS */
 .photo-bg,
 .image-bg {
   position: absolute;
@@ -127,7 +122,6 @@ body {
 .img1 { background-image: url("bg1.jpg"); }
 .img2 { background-image: url("bg2.jpg"); }
 
-/* FROST */
 .frost {
   position: absolute;
   inset: 0;
@@ -139,7 +133,6 @@ body {
   box-shadow: inset 0 0 40px rgba(255,255,255,0.25);
 }
 
-/* CONTENT */
 .invite-content,
 .center-text {
   position: relative;
@@ -153,11 +146,6 @@ body {
   text-align: center;
 }
 
-.invite-content {
-  /*padding-top: 20svh;*/
-}
-
-/* TEXT */
 .small {
   letter-spacing: 4px;
   font-size: 20px;
@@ -193,7 +181,6 @@ body {
   opacity: .85;
 }
 
-/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -244,7 +231,6 @@ body {
   border-radius: 30px;
 }
 
-/* COUNTDOWN */
 .countdown {
   margin-top: 40px;
   display: grid;
@@ -284,7 +270,6 @@ body {
   }
 }
 
-/* VENUE SLIDE STYLING */
 .center-text.venue {
   gap: 12px;
 }
@@ -319,7 +304,6 @@ body {
   transition: all 0.3s ease;
 }
 
-/* subtle hover / tap feedback */
 .map-link:hover,
 .map-link:active {
   background: rgba(255,255,255,0.18);
@@ -375,7 +359,6 @@ body {
   }
 }
 
-/* DELAYED HINT MESSAGE */
 .hint-msg {
   position: absolute;
   bottom: 6svh;
@@ -392,7 +375,6 @@ body {
   opacity: 1;
 }
 
-/* COUNTDOWN TITLE */
 .countdown-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -402,7 +384,6 @@ body {
   transform: translateY(18px);
 }
 
-/* animate ONLY when slide becomes visible */
 .slide.show .countdown-title {
   animation: countdownFloat 2.8s ease forwards;
 }
@@ -422,13 +403,11 @@ body {
   }
 }
 
-/* SWIPE UP HINT */
 .swipe-hint {
   opacity: 0;
   transform: translateY(10px);
 }
 
-/* animate only when slide is visible */
 .slide.show .swipe-hint {
   animation: swipePulse 2.4s ease-in-out infinite;
 }
@@ -449,24 +428,20 @@ body {
   }
 }
 
-/* stop animation after scroll */
 .slides.scrolled .slide.show .swipe-hint {
   animation: none;
   opacity: 0.6;
 }
 
-/* SWIPE HINT */
 .swipe-hint {
   opacity: 0;
   transform: translateY(10px);
 }
 
-/* animate on ANY visible slide */
 .slide.show .swipe-hint {
   animation: swipePulse 2.4s ease-in-out infinite;
 }
 
-/* animation */
 @keyframes swipePulse {
   0% {
     opacity: 0.6;
@@ -482,7 +457,6 @@ body {
   }
 }
 
-/* stop animation AFTER first scroll */
 .slides.scrolled .slide.show .swipe-hint {
   animation: none;
   opacity: 0.6;

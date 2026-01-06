@@ -1,116 +1,91 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>You’re Invited to Our Big Day</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta charset="UTF-8"/>
+    <title>You’re Invited to Our Big Day</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
 <div class="stage">
-
-  <!-- LANDING (PLAIN BACKGROUND) -->
-  <section class="scene envelope active">
-    
-    <button class="seal" id="openInvite">S & W</button>
-    <p class="exclusive">Because your presence matters</p>
-    <p class="hint-msg">Tap the circle to open</p>
-  </section>
-
-  <div class="fade"></div>
-
-  <!-- SCROLLABLE SLIDES -->
-  <div class="slides">
-
-    <!-- SLIDE 1 -->
-    <section class="slide invite">
-      <div class="photo-bg"></div>
-      <div class="frost"></div>
-
-      <div class="invite-content">
-        <p class="small reveal r1">SAVE THE DATE</p><br><br>
-
-        <h1 class="names reveal r2">
-          Sobhraj
-          <span>&</span>
-          Wanphisabha
-        </h1>
-
-        <div class="star reveal r3">✦</div>
-        <p class="date reveal r4">10<sup>th</sup> March 2026</p>
-        <p class="date reveal r4">5:00 PM onwards </p>
-<p class="cta reveal r5 swipe-hint"> SWIPE UP ↑</p>
-     </div>
+    <section class="scene envelope active">
+        <button class="seal" id="openInvite">S & W</button>
+        <p class="exclusive">Because your presence matters</p>
+        <p class="hint-msg">Tap the circle to open</p>
     </section>
 
-    <!-- SLIDE 2 -->
-    <section class="slide image-slide countdown-slide">
-  <div class="image-bg img1"></div>
-  <div class="frost"></div>
-
-  <div class="center-text">
-    <p class="small reveal r1 countdown-title">
-  COUNTING DOWN TO OUR BIG DAY
-</p>
-    <div class="countdown timereveal r2">
-      <div class="time-box">
-        <span id="days">00</span>
-        <label>DAYS</label>
-      </div>
-      <div class="time-box">
-        <span id="hours">00</span>
-        <label>HOURS</label>
-      </div>
-      <div class="time-box">
-        <span id="minutes">00</span>
-        <label>MINUTES</label>
-      </div>
-      <div class="time-box">
-        <span id="seconds">00</span>
-        <label>SECONDS</label>
-      </div>
+    <div class="fade"></div>
+    <div class="slides">
+        <section class="slide invite">
+            <div class="photo-bg"></div>
+            <div class="frost"></div>
+            <div class="invite-content">
+                <p class="small reveal r1">SAVE THE DATE</p><br><br>
+                <h1 class="names reveal r2">
+                    Sobhraj
+                    <span>&</span>
+                    Wanphisabha
+                </h1>
+                <div class="star reveal r3">✦</div>
+                <p class="date reveal r4">10<sup>th</sup> March 2026</p>
+                <p class="date reveal r4">5:00 PM onwards </p>
+                <p class="cta reveal r5 swipe-hint"> SWIPE UP ↑</p>
+            </div>
+        </section>
+        <section class="slide image-slide countdown-slide">
+            <div class="image-bg img1"></div>
+            <div class="frost"></div>
+            <div class="center-text">
+                <p class="small reveal r1 countdown-title">
+                    COUNTING DOWN TO OUR BIG DAY
+                </p>
+                <div class="countdown timereveal r2">
+                    <div class="time-box">
+                        <span id="days">00</span>
+                        <label>DAYS</label>
+                    </div>
+                    <div class="time-box">
+                        <span id="hours">00</span>
+                        <label>HOURS</label>
+                    </div>
+                    <div class="time-box">
+                        <span id="minutes">00</span>
+                        <label>MINUTES</label>
+                    </div>
+                    <div class="time-box">
+                        <span id="seconds">00</span>
+                        <label>SECONDS</label>
+                    </div>
+                </div>
+                <p class="cta reveal r5 swipe-hint"> SWIPE UP ↑</p>
+            </div>
+        </section>
+        <section class="slide image-slide">
+            <div class="image-bg img2"></div>
+            <div class="frost"></div>
+            <div class="center-text venue">
+                <p class="small reveal r1">VENUE LOCATION</p>
+                <h2 class="venue-name reveal r2">
+                    City Hut Dhaba
+                </h2>
+                <p class="venue-city reveal r3">Shillong</p>
+                <a
+                        href="https://maps.google.com/?q=City+Hut+Dhaba+Shillong"
+                        target="_blank"
+                        class="map-link reveal r4"
+                >
+                    📍 OPEN IN GOOGLE MAPS
+                </a>
+            </div>
+        </section>
     </div>
-      <p class="cta reveal r5 swipe-hint"> SWIPE UP ↑</p>
-
-  </div>
-
-
-</section>
-
-    <!-- SLIDE 3 -->
-   <section class="slide image-slide">
-  <div class="image-bg img2"></div>
-  <div class="frost"></div>
-
-  <div class="center-text venue">
-    <p class="small reveal r1">VENUE LOCATION</p>
-
-    <h2 class="venue-name reveal r2">
-      City Hut Dhaba
-    </h2>
-
-    <p class="venue-city reveal r3">Shillong</p>
-
-    <a 
-      href="https://maps.google.com/?q=City+Hut+Dhaba+Shillong"
-      target="_blank"
-      class="map-link reveal r4"
-    >
-      📍 OPEN IN GOOGLE MAPS
-    </a>
-  </div>
-</section>
-
-  </div>
-
 </div>
 <audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 <script src="script.js"></script>
 </body>
