@@ -1,0 +1,234 @@
+@font-face {
+  font-family: 'BrittanySignature';
+  src: url('fonts/BrittanySignature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f4ef;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Scene */
+.scene {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  max-width: 430px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Shared text */
+.top-text {
+  font-size: clamp(14px, 4vw, 20px);
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+  color: #6f6a63;
+}
+
+/* Handwritten names */
+.hero-names {
+  font-family: 'BrittanySignature', cursive;
+  font-size: clamp(42px, 14vw, 72px);
+  line-height: 1.1;
+  text-align: center;
+  color: #3e3b36;
+}
+
+.hero-names span {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(14px, 4vw, 18px);
+  letter-spacing: 3px;
+  display: block;
+  margin: 10px 0;
+  color: #8c857a;
+}
+
+/* ---------- FIRST SCREEN ---------- */
+.envelope {
+  position: absolute;
+  inset: 0;
+  opacity: 1;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  z-index: 3;
+  overflow: hidden;
+}
+
+/* First screen image */
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("bg2.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+}
+
+/* Gloss overlay */
+.cover-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.3),
+    rgba(255,255,255,0.0)
+  );
+}
+
+.cover-content {
+  position: relative;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-text {
+  margin-top: 24px;
+  font-size: clamp(14px, 4vw, 16px);
+  letter-spacing: 2px;
+  color: #6f6a63;
+}
+
+.envelope button {
+  margin-top: 40px;
+  padding: 14px 42px;
+  border: 1px solid #b6b0a6;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  color: #3e3b36;
+  position: relative;
+  z-index: 4;
+}
+
+/* ---------- SECOND SCREEN ---------- */
+.card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.4s ease, transform 1.4s ease;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+}
+
+/* Second screen image */
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("bg1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.7),
+    rgba(255,255,255,0.5)
+  );
+}
+
+/* Scroll-safe content */
+.card-content {
+  position: relative;
+  padding: 64px 28px 140px;
+  text-align: center;
+  z-index: 4;
+  max-height: calc(100svh - 60px);
+  overflow-y: auto;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: #c2b9ab;
+  margin: 32px auto;
+}
+
+.details {
+  font-size: clamp(16px, 4.5vw, 1px);
+  color: #4a463f;
+  margin-top: 14px;
+}
+
+.location-details {
+  font-size: clamp(14px, 2.5vw, 16px);
+  color: #4a463f;
+  margin-top: 1px;
+}
+
+.details.strong {
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.closing {
+    font-family: 'BrittanySignature';
+  src: url('fonts/BrittanySignature.ttf') format('truetype');
+  margin-top: 36px;
+  font-size: clamp(16px, 4.5vw, 18px);
+  color: #4a463f;
+}
+
+/* ---------- OPEN STATE ---------- */
+.scene.open .envelope {
+  opacity: 0;
+  transform: translateY(60px);
+  pointer-events: none;
+}
+
+.scene.open .card {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ---------- FALLING ELEMENTS (ALWAYS ON TOP) ---------- */
+.falling {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;   /* keeps UI clickable */
+  z-index: 10;            /* ALWAYS ABOVE */
+}
+
+.fall-item {
+  position: absolute;
+  top: -40px;
+  font-size: 22px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- SMALL PHONE TWEAK ---------- */
+@media (max-height: 700px) {
+  .card-content {
+    padding-bottom: 100px;
+  }
+}
