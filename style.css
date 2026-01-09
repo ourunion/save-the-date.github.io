@@ -461,3 +461,15 @@ body {
   animation: none;
   opacity: 0.6;
 }
+.countdown-subline {
+    font-family: 'BrittanySignature';
+    font-size: clamp(52px, 15vw, 80px);
+    margin-top: 12px;
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    max-width: 80%;
+    line-height: 1.6;
+}
